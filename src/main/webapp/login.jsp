@@ -14,8 +14,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Ingreso al Sistema</title>
-        <link rel="stylesheet" href="estilos.css">
-
+         <link rel="stylesheet" type="text/css" href="css/estilos.css">
     </head>
     <body>
         <div class="login-container">
@@ -35,7 +34,7 @@
         <p class="error"><%= request.getAttribute("error") %></p>
     <% } %>
     <p><a href="recuperar.jsp">¿Olvidaste tu contraseña?</a></p>
-
+  
         </div>
     
     </body>

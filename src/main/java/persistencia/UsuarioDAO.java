@@ -13,7 +13,6 @@ import logica.Usuario;
 public class UsuarioDAO {
 
     Conexion conexion = new Conexion();
-
     public Usuario validar(String user, String pass) {
         Usuario u = null;
         String sql = "SELECT * FROM usuario WHERE usuario = ?";
@@ -43,13 +42,13 @@ public class UsuarioDAO {
                     u.setRol(rs.getString("rol"));
                     u.setId_usuario(rs.getInt("id_usuario"));
                     u.setEmail(rs.getString("email"));
-
+                    u.setId_institución(rs.getInt("id_institución"));
                     // Reiniciar intentos fallidos
                     PreparedStatement reset = con.prepareStatement(
                         "UPDATE usuario SET intentosfallidos = 0, bloqueadohasta = NULL WHERE usuario = ?");
                     reset.setString(1, user);
                     reset.executeUpdate();
-
+                    
                 } else {
                     // Contraseña incorrecta → aumentar intentos
                     int intentos = rs.getInt("intentosfallidos") + 1;
@@ -71,6 +70,9 @@ public class UsuarioDAO {
                     System.out.println("Intentos fallidos: " + intentos);
                 }
             }
+            con.close();
+            rs.close();
+            ps.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -98,5 +100,6 @@ public Usuario buscarPorEmail(String email) {
     }
     return u;
 }
+
 }
 

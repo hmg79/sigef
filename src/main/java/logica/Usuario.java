@@ -15,7 +15,15 @@ public class Usuario {
     private String Contraseña;
     private String email;
     private String rol;
+    private int id_institución;
 
+    public int getId_institución() {
+        return id_institución;
+    }
+
+    public void setId_institución(int id_institución) {
+        this.id_institución = id_institución;
+    }
     //Getters y Setters
     public int getId_usuario() {
         return id_usuario;

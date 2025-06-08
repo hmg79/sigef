@@ -19,7 +19,7 @@ import java.io.IOException;
 import logica.Usuario;
 import persistencia.UsuarioDAO;
 
-@WebServlet(name = "LoginServlet", urlPatterns = {"/loginServlet"})
+@WebServlet(name = "loginServlet", urlPatterns = {"/loginServlet"})
 public class loginServlet extends HttpServlet {
 
     @Override
@@ -31,15 +31,14 @@ public class loginServlet extends HttpServlet {
 
         UsuarioDAO dao = new UsuarioDAO();
         Usuario u = dao.validar(usuario, contraseña);
-
+        
         if (u != null) {
             // Inicio de sesión exitoso
             HttpSession session = request.getSession();
             session.setAttribute("usuario", u);
-
+            session.setAttribute("rol",u.getRol());
             // Redirigir según el rol
             String rol = u.getRol();
-
             if ("Institucion".equalsIgnoreCase(rol)) {
                 response.sendRedirect("homeInstitucion.jsp");
             } else if ("Departamento".equalsIgnoreCase(rol)) {
