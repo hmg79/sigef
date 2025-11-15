@@ -55,7 +55,7 @@ public class AutenDaoJdbc implements AutenticacionDAO {
 
                 // Verificar contraseña con BCrypt
                 //Verificar funcionamiento correcto de la comparación con la base de datos, solo para verificación
-               /* System.out.println("Hash desde BD: [" + storedHash + "]");
+                /*System.out.println("Hash desde BD: [" + storedHash + "]");
                 System.out.println("Coincide BCrypt: " + BCrypt.checkpw(password, storedHash));
                 boolean coincide = BCrypt.checkpw(password, storedHash);
                 System.out.println("Coincide BCrypt: " + coincide);
@@ -71,8 +71,9 @@ public class AutenDaoJdbc implements AutenticacionDAO {
                     return Optional.empty();
                 }
 
-                System.out.println("Contraseña válida, preparando UserSession...");*/
-               
+                System.out.println("Contraseña válida, preparando UserSession...");
+               */
+                
                 if (storedHash == null || !BCrypt.checkpw(password, storedHash)) {
                     intentos++;
                     if (intentos >= 3) {

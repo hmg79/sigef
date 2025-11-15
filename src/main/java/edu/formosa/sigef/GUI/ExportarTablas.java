@@ -211,7 +211,8 @@ public class ExportarTablas {
             y -= rowH;
         }
     }
-    }
+            doc.save(file);
+        }
 }
 }    
 

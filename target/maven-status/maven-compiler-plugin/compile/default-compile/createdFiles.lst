@@ -17,6 +17,7 @@ edu\formosa\sigef\PERSISTENCIA\ReporteDao.class
 edu\formosa\sigef\PERSISTENCIA\AutenDaoJdbc.class
 edu\formosa\sigef\LOGICA\CatalogoServicio$EstadoOpt.class
 edu\formosa\sigef\PERSISTENCIA\HashUtil.class
+TEST\TestLogin.class
 edu\formosa\sigef\GUI\LoginDialogo$1.class
 edu\formosa\sigef\PERSISTENCIA\CatalogoDaoJdbc.class
 edu\formosa\sigef\LOGICA\AuthServicio.class

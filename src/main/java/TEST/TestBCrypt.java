@@ -15,10 +15,9 @@ import org.mindrot.jbcrypt.BCrypt;
 public class TestBCrypt {
 
     public static void main(String[] args) {
-        // 🔹 Escribí acá la contraseña que usás en el login
         String plain = "1234";
 
-        // 🔹 Copiá y pegá acá exactamente el hash guardado en tu BD (columna contrasena_hash)
+     
         String hashFromDB = "$2a$12$QO2faU.9Z7TJGLrhyU4WMevEEgzPzm4ujtjkY/SpYXS5eGqEzCN/K";
 
         System.out.println("Contraseña ingresada: " + plain);
